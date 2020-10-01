@@ -28,13 +28,18 @@ void loop()
    }
    switch(val){
     case 'f': fwd(); //moves forward when f is pressed
+               val='s'; 
                break;
+              
     case 'b': bwd(); // moves backward when b is pressed
+              val='s';
                break;
            
     case 'l': left();// moves left when l is pressed
+              val='s'; 
                break;
     case 'r': right();// moves right when r is pressed
+              val='s';
                break;
     case 's': 
     default:  stp(); // stops when s or other than any alphabet is pressed 
@@ -48,6 +53,7 @@ void fwd() // forward movement of motor
   digitalWrite(lm2,LOW);
   digitalWrite(rm1,HIGH);
   digitalWrite(rm2,LOW);
+  delay(500);
 }
 
 void bwd() // backward movement of motor
@@ -56,6 +62,7 @@ void bwd() // backward movement of motor
   digitalWrite(lm1,LOW);
   digitalWrite(rm2,HIGH);
   digitalWrite(rm1,LOW);
+   delay(500);
 }
 
 void left() // left movement of motor
@@ -64,6 +71,7 @@ void left() // left movement of motor
   digitalWrite(lm1,LOW);
   digitalWrite(rm1,HIGH);
   digitalWrite(rm2,LOW);
+  delay(500);
 }
 
 
@@ -73,11 +81,13 @@ void right()//right movement of motor
   digitalWrite(lm2,LOW);
   digitalWrite(rm2,HIGH);
   digitalWrite(rm1,LOW);
+  delay(500);
 }
-void stp()
+void stp()//stop
 {
   digitalWrite(lm1,LOW);
   digitalWrite(lm2,LOW);
   digitalWrite(rm2,LOW);
   digitalWrite(rm1,LOW);
+ 
 }
